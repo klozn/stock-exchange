@@ -1,6 +1,3 @@
 # Project exclude paths
-/api/target/
-/cli/target/
-/domain/target/
-/interfaces/target/
-/service/target/
+*/target/
+.idea
