@@ -1,7 +1,9 @@
 package com.switchfully.stock.domain;
 
 import com.google.common.collect.ImmutableMap;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class StockRepository {
     private final ImmutableMap<String, Stock> stockMap;
 
@@ -14,10 +16,7 @@ public class StockRepository {
                 .put("5", new Stock("5", "365")).build();
     }
 
-    public Stock getStockInformation(String stockId) {
-        if (!stockMap.containsKey(stockId)) {
-            throw new IllegalArgumentException("No such stockId");
-        }
+    public Stock getStockById(String stockId) {
         return stockMap.get(stockId);
     }
 }
